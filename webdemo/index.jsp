@@ -8,6 +8,10 @@
     input something:<input type="text" name="info">
     <input type="submit" value="show">
 </form>
+<form action="input2.jsp" method="post">
+    input something:<input type="text" name="info2">
+    <input type="submit" value="show">
+</form>
 </center>
 </body>
 </html>
