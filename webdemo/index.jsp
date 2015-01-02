@@ -5,12 +5,20 @@
 <body>
 <center>
 <form action="input.jsp" method="post">
-    input something:<input type="text" name="info">
-    <input type="submit" value="show">
-</form>
-<form action="input2.jsp" method="post">
-    input something:<input type="text" name="info2">
-    <input type="submit" value="show">
+    <table>
+        <tr>
+            <td>number</td>
+            <td>Symbol</td>
+            <td>number</td>
+            <td>=</td>
+        </tr>
+        <tr>
+            <td><input type="text" name="number1"></td>
+            <td><input type="text" name="symbol"></td>
+            <td><input type="text" name="number2"></td>
+            <td><input type="submit" value="="></td>
+        </tr>
+    </table>
 </form>
 </center>
 </body>

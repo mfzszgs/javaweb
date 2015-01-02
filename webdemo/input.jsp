@@ -4,8 +4,14 @@
 </head>
 <body>
     <%
-        String str=request.getParameter("info");
-        out.println("<h1>"+str+"<h1>");
+        int number1=Integer.parseInt(request.getParameter("number1"));
+        int number2=Integer.parseInt(request.getParameter("number2"));
+        String symbol=request.getParameter("symbol");
+        out.println(number);
+//        if(symbol=="+") out.println(number1+number2);
+      //  else if(symbol=="-") out.println(number1-number2);
+     //   else if(symbol=="*") out.println(number1*number2);
+    //    else(symbol=="/") out.println(number1/number2);
     %>
 </body>
 </html>
