@@ -4,7 +4,7 @@
 </head>
 <body>
 <center>
-<form action="input.jsp" method="post">
+<form action="http://localhost:8080/demo/input.jsp" method="post">
     <table>
         <tr>
             <td>number</td>
