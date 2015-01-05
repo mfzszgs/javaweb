@@ -7,7 +7,7 @@ public class CheckServlet extends HttpServlet{
 		this.doPost(request,response) ;
 	}
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
-		request.setCharacterEncoding("GBK") ;
+		request.setCharacterEncoding("utf-8") ;
 		response.setContentType("text/html") ;
 		PrintWriter out = response.getWriter() ;
 		String userid = request.getParameter("userid") ;

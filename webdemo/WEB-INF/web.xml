@@ -33,6 +33,15 @@
 		<servlet-name>CheckServlet</servlet-name>
 		<url-pattern>/CheckServlet</url-pattern>
 	</servlet-mapping>
+    <servlet>
+        <servlet-name>CalculatorMul</servlet-name>
+        <servlet-class>com.suweiyue.www.CalculatorMul</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculatorMul</servlet-name>
+        <url-pattern>/CalculatorMul</url-pattern>
+    </servlet-mapping>
+
 	<jsp-config>
 		<taglib>
 			<taglib-uri>http://www.mldn.cn/jst/core</taglib-uri>
