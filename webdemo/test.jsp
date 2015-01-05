@@ -1,6 +1,6 @@
-<%@page language="java" contentType="text/html" pageEncoding="utf-8"%>
+<%@page language="java" contentType="text/html" pageEncoding="utf-8" import="java.io.BufferedReader" import="java.io.DataOutputStream" import="java.io.IOException" import="java.io.InputStreamReader" import="java.net.HttpURLConnection" import="java.net.URL" import="java.net.URLEncoder"%>
 <%
-    public static final String GET_URL = "ttp://localhost:8080/demo/calculatormul"; 
+    String GET_URL = "http://localhost:8080/demo/CalculatorMul"; 
                // 拼凑get请求的URL字串，使用URLEncoder.encode对特殊和不可见字符进行编码 
                String getURL = GET_URL + "?firstnum=1&secondnum=2"; 
                URL getUrl = new URL(getURL); 
@@ -10,19 +10,15 @@
                connection.connect(); 
                // 发送数据到服务器并使用Reader读取返回的数据 
                BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream())); 
-               System.out.println(" ============================= "); 
-               System.out.println(" Contents of get request "); 
-               System.out.println(" ============================= "); 
                String lines; 
-               while ((lines = reader.readLine()) != null) { 
-                       System.out.println(lines); 
+               while ((lines = reader.readLine()) != null) {
+%>
+<%=lines%>
+<% 
+  //                     System.out.println(lines); 
                } 
                reader.close(); 
                // 断开连接 
                connection.disconnect(); 
-               System.out.println(" ============================= "); 
-               System.out.println(" Contents of get request ends "); 
-               System.out.println(" ============================= "); 
-         
-
+%>
 
