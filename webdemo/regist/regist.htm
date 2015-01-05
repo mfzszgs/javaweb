@@ -1,0 +1,51 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<head>
+	<title>www</title>
+	<script language="javascript">
+		var xmlHttp ;
+		var flag = false ;
+		function createXMLHttp(){
+			if(window.XMLHttpRequest){
+				xmlHttp = new XMLHttpRequest() ;
+			} else {
+				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP") ;
+			}
+		}
+		function checkUserid(userid){
+			createXMLHttp() ;
+			xmlHttp.open("POST","../CheckServlet?userid="+userid) ;
+			xmlHttp.onreadystatechange = checkUseridCallback ;
+			xmlHttp.send(null) ;
+			document.getElementById("msg").innerHTML = "Checking..." ;
+		}
+		function checkUseridCallback(){
+			if(xmlHttp.readyState == 4){
+				if(xmlHttp.status == 200){
+					
+					var text = xmlHttp.responseText ;
+					if(text == "true"){	// 
+						document.getElementById("msg").innerHTML = "Id 重复" ;
+						flag = false ;
+					} else {
+						document.getElementById("msg").innerHTML = "Id 可以使用" ;
+						flag = true ;
+					}
+				}
+			}
+		}
+		function checkForm(){
+			return flag ;
+		}
+	</script>
+</head>
+<body>
+<form action="regist.jsp" method="post" onsubmit="return checkForm()">
+	UserId<input type="text" name="userid" onblur="checkUserid(this.value)"><span id="msg"></span><br>
+    Name<input type="text" name="name"><br>
+	Password<input type="password" name="password"><br>
+	<input type="submit" value="submit">
+	<input type="reset" value="reset">
+</form>
+</body>
+</html>
