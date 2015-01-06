@@ -1,0 +1,30 @@
+package com.wing.www;
+
+public class Operator {
+	private String url;
+	private int firstnum;
+	private int secondnum;
+	private String opera;
+	private int result;
+
+	public void setUrl(String str) {
+		url = str;
+	}
+
+	public void setFirstNum(int num) {
+		firstnum = num;
+	}
+
+	public void setSecondNum(int num) {
+		secondnum = num;
+	}
+
+	public void setOpera(String str) {
+		opera = str;
+	}
+	public int getResult(){
+		
+		
+		return 0;
+	}
+}

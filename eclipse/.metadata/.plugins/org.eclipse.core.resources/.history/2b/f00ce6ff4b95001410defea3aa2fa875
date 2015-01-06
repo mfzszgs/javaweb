@@ -1,0 +1,34 @@
+package com.wing.www;
+
+import java.util.LinkedList;
+
+public class Compute {
+
+	public void setString(String example) {
+		LinkedList<String> link = new LinkedList<String>();
+		StringBuilder stringbuilder = new StringBuilder();
+		for (int i = 0; i < example.length(); i++) {
+			char c = example.charAt(i);
+			if (c == '+' || c == '-' || c == '*' || c == '/') {
+				link.add(stringbuilder.toString());
+				stringbuilder.delete(0, stringbuilder.length());
+				link.add(String.valueOf(c));
+			} else {
+				stringbuilder.append(c);
+			}
+		}
+		link.add(stringbuilder.toString());
+
+		for (int i = 0; i < link.size(); i++) {
+			String str = link.get(i);
+			if (str.equals("*")) {
+				int firstnum = Integer.parseInt(link.get(i - 1));
+				int secondnum = Integer.parseInt(link.get(i + 1));
+				int result = 0;
+				Operator 
+
+			}
+		}
+
+	}
+}
