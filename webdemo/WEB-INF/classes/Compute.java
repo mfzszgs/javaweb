@@ -72,7 +72,7 @@ public class Compute {
 				operator.setFirstNum(Integer.parseInt(link.get(i - 1)));
 				operator.setSecondNum(Integer.parseInt(link.get(i + 1)));
 				operator.setUrl(url);
-				operator.setOpera("sub");
+				operator.setOpera("Sub");
                 link.remove(i);
                 link.remove(i);
                 link.set(--i,Integer.toString(operator.getResult()));

@@ -1,9 +1,0 @@
-package com.wing.www;
-
-public class Compute {
-
-	public Compute(){
-		
-	}
-	
-}
