@@ -1,0 +1,205 @@
+@CHARSET "UTF-8";
+
+form{/* 控制表单 */
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+     margin: 0 auto; 
+    width: 1024px;
+}
+
+ul, li {
+    margin:0;
+    padding:0;
+}
+a {
+    color: #004993;
+    text-decoration: none;
+}
+a:hover {
+    color: #990000;
+    text-decoration: underline;
+}
+a img {
+    border: medium none;
+}
+
+#M_left, .M_left {/* 控制左边主体位置*/
+    float: left;
+    width: 230px;
+}
+
+#head_menu {
+    
+    height: 32px;
+    background-color: #EBF4FB;
+    width:1024px;
+    /* margin:6px 0 7px 0; */
+}
+#head_menu ul {
+    float: left;
+}
+#head_menu li {
+   /*  background: url("images/menu_a_bg.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0); */
+    float: left;
+    list-style: none outside none;
+}
+ #head_menu a {
+    color: #666666;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 30px;
+    margin-left: 2px;
+    padding: 0 3px; 
+    text-align: center;
+    text-decoration: none;
+    width: 137px;
+} 
+#head_menu .sel a:hover {
+    color: #FFFFFF;
+}
+#head_menu .sel a, #head_menu a:hover {
+    color: blue;
+}
+
+.left_frame {
+    border: 0px solid #CCCCCC;
+    margin: 0 10px 10px;
+}
+
+.left_title {/* 左标题样式 */
+    background: url("images/menu_title_bg.jpg") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 0px solid #CCCCCC;
+    font-weight: bold;
+    height: 28px;
+    line-height: 26px;
+}
+.left_title img {
+    float: left;
+    margin-left: 5px;
+    margin-top: 4px;
+}
+.left_title span {
+    float: left;
+    margin-left: 5px;
+    margin-top: 1px;
+}
+.left_title a {
+    color: #FF6600;
+    float: right;
+    font-size: 12px;
+    line-height: 20px;
+    margin-right: 8px;
+    margin-top: 4px;
+}
+
+
+.log_span {/* 控制登录中的“账号”、“密码”的字体 */
+ height:16px;
+}
+.log_input {/* 控制登录中的输入框 */
+    height: 18px;
+    margin-left: 10px;
+    width: 110px;
+}
+
+.left_body input.submit {
+    margin-top: 50px;
+    padding-top: 3px;
+}
+
+
+.msgstr {/* "请登录以使用本系统"的字体 */
+    color: #FF0000;
+    display: inline;
+    font-size: 12px;
+}
+
+.left_body {/* "联系我们"内的字体 */
+    line-height: 26px;
+    margin: 10px 5px;
+    text-align: left;
+    display: inline;
+    width:110px;
+}
+
+.left_body ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.left_body li a {
+    background-image: url("images/1.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    display: block;
+    padding-left: 33px;
+    text-align: left;
+    width: 132px;
+}
+.left_body li.sel a {
+    background-color: #ECFBD4;
+    background-image: url("images/7.png");
+}
+
+.left_body li {/* 去掉选项前的点 */
+    list-style-type: none;
+}
+
+.left_body li a:hover {/* 鼠标移上去变颜色 */
+    
+    background-color: #BCE774;
+    background-image: url("images/10.png");
+}
+
+#M_right, .M_right {/* 控制右主体位置 */
+    background: none repeat scroll 0 0 #EBF4FB;
+    border: 1px solid #CCCCCC;
+    float: left;
+    padding: 10px;
+    width: 768px;
+}
+
+/* .new{
+	background: none repeat scroll 0 0 #EBF4FB;
+} */
+.right_form h1, .posts_title {
+    font-size: 15px;
+    line-height: 30px;
+    margin: 0;
+}
+.right_form h1 a, .posts_title a {
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0 4px;
+    text-indent: 0;
+}
+
+.right_form h2, .posts_vtitle {
+    border-bottom: 1px dashed #005599;
+    clear: both;
+    color: #666666;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 24px;
+    margin: 0 0 5px;
+    padding-bottom: 5px;
+    text-indent: 2em;
+}
+
+.clear {
+    clear: both;
+}
+
+
+#M_foot, .M_foot {/* 控制底部标题 */
+    border-top: 1px dashed #005599;
+    font-size: 13px;
+    height: 85px;
+    line-height: 25px;
+    margin: 0 10px;
+    padding-top: 10px;
+    text-align: left;
+}
