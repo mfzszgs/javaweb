@@ -40,7 +40,7 @@ public class Compute {
 				operator.setFirstNum(Integer.parseInt(link.get(i - 1)));
 				operator.setSecondNum(Integer.parseInt(link.get(i + 1)));
 				operator.setUrl(url);
-				operator.setOpera("Mul");
+				operator.setOpera("/CalculatorMul");
                 link.remove(i);
                 link.remove(i);
                 link.set(--i,Integer.toString(operator.getResult()));
@@ -49,7 +49,7 @@ public class Compute {
 				operator.setFirstNum(Integer.parseInt(link.get(i - 1)));
 				operator.setSecondNum(Integer.parseInt(link.get(i + 1)));
 				operator.setUrl(url);
-				operator.setOpera("Div");
+				operator.setOpera("/CalculatorDiv");
                 link.remove(i);
                 link.remove(i);
                 link.set(--i,Integer.toString(operator.getResult()));
@@ -63,7 +63,7 @@ public class Compute {
 				operator.setFirstNum(Integer.parseInt(link.get(i - 1)));
 				operator.setSecondNum(Integer.parseInt(link.get(i + 1)));
 				operator.setUrl(url);
-				operator.setOpera("Add");
+				operator.setOpera("/CalculatorAdd");
                 link.remove(i);
                 link.remove(i);
                 link.set(--i,Integer.toString(operator.getResult()));
@@ -72,7 +72,7 @@ public class Compute {
 				operator.setFirstNum(Integer.parseInt(link.get(i - 1)));
 				operator.setSecondNum(Integer.parseInt(link.get(i + 1)));
 				operator.setUrl(url);
-				operator.setOpera("Sub");
+				operator.setOpera("/CalculatorSub");
                 link.remove(i);
                 link.remove(i);
                 link.set(--i,Integer.toString(operator.getResult()));
