@@ -1,0 +1,177 @@
+@CHARSET "UTF-8";
+
+.biaoge{
+	float:right;
+}
+.roll{
+	float:left;
+}
+
+table {table-layout:fixed;}
+
+td {height: 5px; text-overflow: ellipsis;}/* 超出了长度的话，用省略号 */
+
+ form{/* 控制表单 */
+    background: none repeat scroll 0 0 #FFFFFF;
+    /* border: 1px solid #CCCCCC; */
+    margin: 0 auto;
+    width: 1024px;
+    hight:300px;
+} 
+ul, li {
+    margin:0;
+    padding:0;
+}
+a {
+    color: #004993;
+    text-decoration: none;
+}
+a:hover {
+    color: #990000;
+    text-decoration: underline;
+}
+a img {
+    border: medium none;
+}
+
+#head_menu {
+    
+    height: 32px;
+    background-color: #EBF4FB;
+    width:1024px;
+    /* margin:6px 0 7px 0; */
+}
+
+#head_menu ul {
+    float: left;
+}
+#head_menu li {
+    background: url("images/menu_a_bg.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    float: left;
+    list-style: none outside none;
+}
+#head_menu a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    line-height: 30px;
+    margin-left: 2px;
+    padding: 0 3px; 
+    text-align: center;
+    text-decoration: none;
+    width: 137px;
+}
+#head_menu .sel a:hover {
+    color: #FFFFFF;
+}
+#head_menu .sel a, #head_menu a:hover {
+    color: #FF3300;
+}
+.N_left{
+/* border: 1px solid #CCCCCC; */
+font-size: 10pt;
+color: red;
+float: left;
+text-align: center;
+padding: 10px ,20px;
+width: 343px;
+height: 70px;
+}
+
+.changdu{
+	width:210px;
+	display:inline;
+	color:#004993;
+	font-weight: bold;
+}
+
+.N_right {/* 控制右主体位置 */
+   
+    float: left;
+    
+    width:400px;
+    height: 70px;
+}
+
+ .M_left {/* 控制左主体位置 */
+   
+    float: left;
+    padding: 10px;
+    margin: 0 auto;
+    width: 1024px;
+    
+}
+.STYLE6 {
+	color: #0000FF;
+	font-size: 16px;
+	width:200px;
+	font-weight: bold;
+}
+
+ 
+.M_table {/* 控制下方列表主体 */
+  
+    float: left;
+    padding:0 40px 0;   
+     margin: 0 ; 
+    width: 960px;
+   border-collapse:collapse; 
+   
+   
+}  
+ 
+.text1{
+	font-size:11pt;
+	color:blue;
+	float:left;
+	
+}
+
+
+.text2{
+	font-size:11pt;
+	color:red;
+}
+
+.search {
+	/* background: url("images/search1.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0); */
+    height: 30px;
+    display:inline;
+      
+    padding:3px 0 0 0; 
+}
+.search1 {
+	height: 30px;
+    display:inline;
+     float:right; 
+    padding:3px 0 0 0; 
+}
+
+.button{
+	float:right;	
+}
+
+.liulan{
+	float:left;
+	margin:100px 150px 0;
+}
+.clear {
+    clear: both;
+}
+
+.update{
+	float:right;
+	margin:12px;
+	
+}
+#M_foot, .M_foot {/* 控制底部标题 */
+    border-top: 1px dashed #005599;
+    font-size: 13px;
+    height: 85px;
+    line-height: 25px;
+    margin: 0 10px;
+    padding-top: 10px;
+    text-align: left;
+}

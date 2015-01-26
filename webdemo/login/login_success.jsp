@@ -1,11 +1,11 @@
-<%@page contentType="text/html" pageEncoding="GBK"%>
+<%@page contentType="text/html" pageEncoding="utf-8"%>
 <html>
-<head><title>www.mldnjava.cn£¬MLDN¸ß¶ËJavaÅàÑµ</title></head>
+<head><title>www.mldnjava.cnï¼ŒMLDNé«˜ç«¯JavaåŸ¹è®­</title></head>
 <body>
 <center>
 <h1>Login</h1>
 <h2>Login success</h2>
-<h2>welcome<font color="red"><%=request.getParameter("uname")%></font>¹âÁÙ£¡</h2>
+<h2>welcome<font color="red"><%=request.getParameter("uname")%></font>å…‰ä¸´ï¼</h2>
 </center>
 </body>
 </html>

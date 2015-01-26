@@ -1,46 +1,37 @@
-<%@page contentType="text/html" pageEncoding="GBK"%>
+<%@page contentType="text/html" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*"%>
 <html>
-<head><title>www.mldnjava.cn£¬MLDN¸ß¶ËJavaÅàÑµ</title></head>
+<head><title>www.mldnjava.cnï¼ŒMLDNé«˜ç«¯JavaåŸ¹è®­</title></head>
 <body>
 <center>
-<h1>µÇÂ½²Ù×÷</h1>
+<h1>é </h1>
 <hr>
-<%!	// ¶¨ÒåÈô¸É¸öÊı¾İ¿âµÄÁ¬½Ó³£Á¿
+<%!	// å®šä¹‰è‹¥å¹²ä¸ªæ•°æ®åº“çš„è¿æ¥å¸¸é‡
 	public static final String DBDRIVER = "org.gjt.mm.mysql.Driver" ;
 	public static final String DBURL = "jdbc:mysql://localhost:3306/firstdb";
 	public static final String DBUSER = "root" ;
 	public static final String DBPASS = "s" ;
 %>
 <%
-	Connection conn = null ;		// Êı¾İ¿âÁ¬½Ó
-	PreparedStatement pstmt = null ;	// Êı¾İ¿âÔ¤´¦Àí²Ù×÷
-	ResultSet rs = null ;		// ²éÑ¯Òª´¦Àí½á¹û¼¯
-	boolean flag = false ;	// ±£´æ±ê¼Ç
-	String name = null ;	// ±£´æÕæÊµĞÕÃû
+	Connection conn = null ;		// æ•°æ®åº“è¿æ¥
+	PreparedStatement pstmt = null ;	// æ•°æ®åº“é¢„å¤„ç†æ“ä½œ
+	ResultSet rs = null ;		// æŸ¥è¯¢è¦å¤„ç†ç»“æœé›†
+	boolean flag = false ;	// ä¿å­˜æ ‡è®°
+	String name = null ;	// ä¿å­˜çœŸå®å§“å
 %>
 <%
 try{
 %>
-<%="point"%>
 <%
 	Class.forName(DBDRIVER) ;
-%>
-<%="point"%>
-<%
 	conn = DriverManager.getConnection(DBURL,DBUSER,DBPASS) ;
 	String sql = "SELECT name FROM user WHERE userid=? AND password=?" ;
 	pstmt = conn.prepareStatement(sql) ;
-	pstmt.setString(1,"admin") ;
-	pstmt.setString(2,"admin") ;
-//	pstmt.setString(1,request.getParameter("id")) ;
-//	pstmt.setString(2,request.getParameter("password")) ;
-	rs = pstmt.executeQuery() ;	// ²éÑ¯
-%>
-<%="point"%>
-<%
-	if(rs.next()){	// Èç¹ûÓĞÊı¾İ£¬Ôò¿ÉÒÔÖ´ĞĞ
-		flag = true ;	//  ±íÊ¾µÇÂ½³É¹¦
+	pstmt.setString(1,request.getParameter("id")) ;
+	pstmt.setString(2,request.getParameter("password")) ;
+	rs = pstmt.executeQuery() ;	// æŸ¥è¯¢
+	if(rs.next()){	// å¦‚æœæœ‰æ•°æ®ï¼Œåˆ™å¯ä»¥æ‰§è¡Œ
+		flag = true ;	//  è¡¨ç¤ºç™»é™†æˆåŠŸ
 		name = rs.getString(1) ;
 	}	
 %>
@@ -57,13 +48,15 @@ finally{
 }
 %>
 <%
-	if(flag){	// µÇÂ½³É¹¦
+	if(flag){	// ç™»é™†æˆåŠŸ
 %>
-<%="Success"%>
+		<jsp:forward page="login_success.jsp">
+			<jsp:param name="uname" value="<%=name%>"/>
+		</jsp:forward>
 <%
-	} else {		// µÇÂ½Ê§°Ü
+	} else {		// ç™»é™†å¤±è´¥
 %>
-<%="Fail"%>
+		<jsp:forward page="login_failure.htm"/>
 <%
 	}
 %>

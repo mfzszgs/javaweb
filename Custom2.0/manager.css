@@ -1,0 +1,6 @@
+.tab ul li {float:left;background:#CCC;margin-right:2px;border-bottom:2px solid #DDD;} 
+.tab ul li.current{background:#AAA;border-bottom:2px solid #AAA;} 
+.tab ul li a{color:#000;display:block;padding:5px 10px;} 
+.tab ul li.current a{color:#fff;display:block;padding:5px 10px;} 
+.tab div{display:none;} 
+.tab div.current{display:block;background:#AAA;color:#fff;padding:5px;margin-bottom:10px;}
