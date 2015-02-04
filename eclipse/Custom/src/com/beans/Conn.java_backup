@@ -1,0 +1,76 @@
+package com.beans;
+ 
+import java.sql.*;
+import java.net.URL;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
+
+import com.mfzszgs.mule.server.MuleConnectionServer;
+
+public class Conn {
+	private static Connection con;
+	private static final String dbdriver = "com.mysql.jdbc.Driver";
+	private static final String dburl = "jdbc:mysql://localhost:3306/customsdb";
+    /*private static final String URL = "jdbc:mysql://192.168.1.79:3306/customsdb";*/
+    private static final String dbuser = "root";
+	private static final String dbpassword = "s";
+	
+//	static{
+//		try {
+//			Class.forName(DRIVER);
+//			System.out.println("驱动加载！");
+//		} catch (ClassNotFoundException e) {
+//			e.printStackTrace();
+//		}
+//	}
+	
+	public static Connection getConnection() {
+			try {
+				
+				URL url = new URL("http://localhost:10100/mule?wsdl");
+				// 第一个参数是服务的URI
+				// 第二个参数是在WSDL发布的服务名
+				QName qname = new QName("http://server.mule.mfzszgs.com/",
+						"MuleConnectionServer");
+				// 创建服务
+				Service service = Service.create(url, qname);
+				// 提取端点接口，服务“端口”。
+				MuleConnectionServer mcs = service
+						.getPort(MuleConnectionServer.class);
+				return mcs.getMuleConnection(dbdriver, dburl, dbuser, dbpassword);
+				
+				//con = DriverManager.getConnection(URL, USER, PASSWORD);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return con;
+	}
+	
+	public static void closeCon(Connection con){
+		try {
+			if(con!=null)
+				con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void closeStmt(Statement stmt){
+		try {
+			if(stmt!=null)
+				stmt.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void closeRs(ResultSet rs){
+		try {
+			if(rs!=null)
+				rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+}
