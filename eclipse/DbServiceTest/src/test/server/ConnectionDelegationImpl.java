@@ -42,7 +42,6 @@ public class ConnectionDelegationImpl implements ConnectionDelegation {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		// return new ConnectionDelegation(conn);
 	}
 
 	@Override

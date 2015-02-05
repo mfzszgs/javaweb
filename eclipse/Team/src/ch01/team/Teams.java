@@ -4,7 +4,7 @@ import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 
-@WebService
+@WebService(endpointInterface = "ch01.team.Teams")
 public class Teams {
     private TeamsUtility utils;
 

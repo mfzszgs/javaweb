@@ -9428,3 +9428,2165 @@ Binding(ALT+SHIFT+ARROW_LEFT,
 
 !ENTRY org.eclipse.ui 4 4 2015-02-04 11:03:21.095
 !MESSAGE Could not retrieve EHandlerService or ICommandService from context evaluation context fororg.eclipse.wst.xml.ui.reload.dependencies
+!SESSION 2015-02-04 15:28:24.947 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jpt.dbws.eclipselink.ui 4 0 2015-02-04 15:28:26.084
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jpt.dbws.eclipselink.ui [391]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.wst.common.project.facet.ui)(&(bundle-version>=1.3.0)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.wst.common.project.facet.ui
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.persistence.dbws.builder)(&(bundle-version>=2.3.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.6.0.v20140809-296a69f"; osgi.wiring.bundle="org.eclipse.persistence.dbws.builder"
+  org.eclipse.persistence.dbws.builder [osgi.identity; osgi.identity="org.eclipse.persistence.dbws.builder"; type="osgi.bundle"; version:Version="2.6.0.v20140809-296a69f"]
+    import: (osgi.wiring.package=javax.xml.bind)
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.apikit 4 0 2015-02-04 15:28:26.485
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.apikit [910]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.1.0,4.2.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.errors 4 0 2015-02-04 15:28:26.513
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.errors [916]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ion 4 0 2015-02-04 15:28:26.546
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ion [918]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven 4 0 2015-02-04 15:28:26.603
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven [919]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven.ui 4 0 2015-02-04 15:28:26.643
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven.ui [920]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime 4 0 2015-02-04 15:28:26.669
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime [929]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime.ui 4 0 2015-02-04 15:28:26.704
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime.ui [930]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.debugger 4 0 2015-02-04 15:28:26.767
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.debugger [939]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.sap.3.5.0 4 0 2015-02-04 15:28:26.800
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.sap.3.5.0 [949]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-04 15:28:36.048
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-04 15:28:41.277
+!MESSAGE 'M2_REPO has been previously set. Not adding it again to the workspace.
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-04 15:28:43.016
+!MESSAGE Forcing the usage of 'current' in the schemaLocation of CMIS [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/1.1/mule-cmis.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/current/mule-cmis.xsd
+Forcing the usage of 'current' in the schemaLocation of Facebook [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/2.0/mule-facebook.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/current/mule-facebook.xsd
+Forcing the usage of 'current' in the schemaLocation of Magento [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/magento/1.1/mule-magento.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/magento/current/mule-magento.xsd
+Forcing the usage of 'current' in the schemaLocation of Mongo DB [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/2.0/mule-mongo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/current/mule-mongo.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon S3 [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/s3/2.0/mule-s3.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd
+Forcing the usage of 'current' in the schemaLocation of Salesforce [version 5.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/5.0/mule-sfdc.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon SQS [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/1.0/mule-sqs.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/current/mule-sqs.xsd
+Forcing the usage of 'current' in the schemaLocation of Twitter [version 2.4, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/2.4/mule-twitter.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/current/mule-twitter.xsd
+
+!ENTRY org.eclipse.ui.browser 2 0 2015-02-04 15:28:46.608
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+!SESSION 2015-02-04 16:55:20.757 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jpt.dbws.eclipselink.ui 4 0 2015-02-04 16:55:21.832
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jpt.dbws.eclipselink.ui [391]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.wst.common.project.facet.ui)(&(bundle-version>=1.3.0)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.wst.common.project.facet.ui
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.persistence.dbws.builder)(&(bundle-version>=2.3.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.6.0.v20140809-296a69f"; osgi.wiring.bundle="org.eclipse.persistence.dbws.builder"
+  org.eclipse.persistence.dbws.builder [osgi.identity; osgi.identity="org.eclipse.persistence.dbws.builder"; type="osgi.bundle"; version:Version="2.6.0.v20140809-296a69f"]
+    import: (osgi.wiring.package=javax.xml.bind)
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.apikit 4 0 2015-02-04 16:55:22.196
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.apikit [910]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.1.0,4.2.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.errors 4 0 2015-02-04 16:55:22.237
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.errors [916]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ion 4 0 2015-02-04 16:55:22.277
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ion [918]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven 4 0 2015-02-04 16:55:22.342
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven [919]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven.ui 4 0 2015-02-04 16:55:22.375
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven.ui [920]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime 4 0 2015-02-04 16:55:22.399
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime [929]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime.ui 4 0 2015-02-04 16:55:22.426
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime.ui [930]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.debugger 4 0 2015-02-04 16:55:22.499
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.debugger [939]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.sap.3.5.0 4 0 2015-02-04 16:55:22.532
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.sap.3.5.0 [949]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.resources 2 10035 2015-02-04 16:55:28.559
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-04 16:55:28.966
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-04 16:55:34.142
+!MESSAGE 'M2_REPO has been previously set. Not adding it again to the workspace.
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-04 16:55:36.282
+!MESSAGE Forcing the usage of 'current' in the schemaLocation of CMIS [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/1.1/mule-cmis.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/current/mule-cmis.xsd
+Forcing the usage of 'current' in the schemaLocation of Facebook [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/2.0/mule-facebook.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/current/mule-facebook.xsd
+Forcing the usage of 'current' in the schemaLocation of Magento [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/magento/1.1/mule-magento.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/magento/current/mule-magento.xsd
+Forcing the usage of 'current' in the schemaLocation of Mongo DB [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/2.0/mule-mongo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/current/mule-mongo.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon S3 [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/s3/2.0/mule-s3.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd
+Forcing the usage of 'current' in the schemaLocation of Salesforce [version 5.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/5.0/mule-sfdc.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon SQS [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/1.0/mule-sqs.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/current/mule-sqs.xsd
+Forcing the usage of 'current' in the schemaLocation of Twitter [version 2.4, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/2.4/mule-twitter.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/current/mule-twitter.xsd
+
+!ENTRY org.eclipse.ui.browser 2 0 2015-02-04 16:55:40.160
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+!SESSION 2015-02-04 17:58:53.401 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jpt.dbws.eclipselink.ui 4 0 2015-02-04 17:58:54.860
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jpt.dbws.eclipselink.ui [391]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.wst.common.project.facet.ui)(&(bundle-version>=1.3.0)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.wst.common.project.facet.ui
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.persistence.dbws.builder)(&(bundle-version>=2.3.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.6.0.v20140809-296a69f"; osgi.wiring.bundle="org.eclipse.persistence.dbws.builder"
+  org.eclipse.persistence.dbws.builder [osgi.identity; osgi.identity="org.eclipse.persistence.dbws.builder"; type="osgi.bundle"; version:Version="2.6.0.v20140809-296a69f"]
+    import: (osgi.wiring.package=javax.xml.bind)
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.apikit 4 0 2015-02-04 17:58:55.440
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.apikit [910]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.1.0,4.2.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.errors 4 0 2015-02-04 17:58:55.473
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.errors [916]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ion 4 0 2015-02-04 17:58:55.516
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ion [918]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven 4 0 2015-02-04 17:58:55.570
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven [919]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven.ui 4 0 2015-02-04 17:58:55.631
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven.ui [920]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime 4 0 2015-02-04 17:58:55.664
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime [929]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime.ui 4 0 2015-02-04 17:58:55.705
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime.ui [930]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.debugger 4 0 2015-02-04 17:58:55.774
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.debugger [939]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.sap.3.5.0 4 0 2015-02-04 17:58:55.802
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.sap.3.5.0 [949]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-04 17:59:02.313
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-04 17:59:09.278
+!MESSAGE 'M2_REPO has been previously set. Not adding it again to the workspace.
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-04 17:59:11.955
+!MESSAGE Forcing the usage of 'current' in the schemaLocation of CMIS [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/1.1/mule-cmis.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/current/mule-cmis.xsd
+Forcing the usage of 'current' in the schemaLocation of Facebook [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/2.0/mule-facebook.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/current/mule-facebook.xsd
+Forcing the usage of 'current' in the schemaLocation of Magento [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/magento/1.1/mule-magento.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/magento/current/mule-magento.xsd
+Forcing the usage of 'current' in the schemaLocation of Mongo DB [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/2.0/mule-mongo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/current/mule-mongo.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon S3 [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/s3/2.0/mule-s3.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd
+Forcing the usage of 'current' in the schemaLocation of Salesforce [version 5.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/5.0/mule-sfdc.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon SQS [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/1.0/mule-sqs.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/current/mule-sqs.xsd
+Forcing the usage of 'current' in the schemaLocation of Twitter [version 2.4, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/2.4/mule-twitter.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/current/mule-twitter.xsd
+
+!ENTRY org.eclipse.ui.browser 2 0 2015-02-04 17:59:17.298
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.eclipse.jface 2 0 2015-02-04 18:03:17.728
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-02-04 18:03:17.728
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7e4c8a76,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@43ca23e4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)
+!SESSION 2015-02-05 09:47:43.053 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jpt.dbws.eclipselink.ui 4 0 2015-02-05 09:47:44.190
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jpt.dbws.eclipselink.ui [391]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.wst.common.project.facet.ui)(&(bundle-version>=1.3.0)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.wst.common.project.facet.ui
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.persistence.dbws.builder)(&(bundle-version>=2.3.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.6.0.v20140809-296a69f"; osgi.wiring.bundle="org.eclipse.persistence.dbws.builder"
+  org.eclipse.persistence.dbws.builder [osgi.identity; osgi.identity="org.eclipse.persistence.dbws.builder"; type="osgi.bundle"; version:Version="2.6.0.v20140809-296a69f"]
+    import: (osgi.wiring.package=javax.xml.bind)
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.apikit 4 0 2015-02-05 09:47:44.477
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.apikit [910]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.1.0,4.2.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.errors 4 0 2015-02-05 09:47:44.500
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.errors [916]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ion 4 0 2015-02-05 09:47:44.530
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ion [918]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven 4 0 2015-02-05 09:47:44.585
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven [919]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven.ui 4 0 2015-02-05 09:47:44.617
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven.ui [920]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime 4 0 2015-02-05 09:47:44.639
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime [929]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime.ui 4 0 2015-02-05 09:47:44.664
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime.ui [930]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.debugger 4 0 2015-02-05 09:47:44.728
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.debugger [939]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.sap.3.5.0 4 0 2015-02-05 09:47:44.762
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.sap.3.5.0 [949]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-05 09:47:52.082
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-05 09:47:57.854
+!MESSAGE 'M2_REPO has been previously set. Not adding it again to the workspace.
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-05 09:47:59.782
+!MESSAGE Forcing the usage of 'current' in the schemaLocation of CMIS [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/1.1/mule-cmis.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/current/mule-cmis.xsd
+Forcing the usage of 'current' in the schemaLocation of Facebook [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/2.0/mule-facebook.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/current/mule-facebook.xsd
+Forcing the usage of 'current' in the schemaLocation of Magento [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/magento/1.1/mule-magento.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/magento/current/mule-magento.xsd
+Forcing the usage of 'current' in the schemaLocation of Mongo DB [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/2.0/mule-mongo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/current/mule-mongo.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon S3 [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/s3/2.0/mule-s3.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd
+Forcing the usage of 'current' in the schemaLocation of Salesforce [version 5.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/5.0/mule-sfdc.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon SQS [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/1.0/mule-sqs.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/current/mule-sqs.xsd
+Forcing the usage of 'current' in the schemaLocation of Twitter [version 2.4, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/2.4/mule-twitter.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/current/mule-twitter.xsd
+
+!ENTRY org.eclipse.ui.browser 2 0 2015-02-05 09:48:06.170
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+!SESSION 2015-02-05 14:15:53.039 -----------------------------------------------
+eclipse.buildId=4.4.1.M20140925-0400
+java.version=1.8.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.jpt.dbws.eclipselink.ui 4 0 2015-02-05 14:15:54.155
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.jpt.dbws.eclipselink.ui [391]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"] because it is exposed to package 'javax.xml.bind' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.wst.common.project.facet.ui)(&(bundle-version>=1.3.0)(!(bundle-version>=2.0.0))))
+     |
+    provide: osgi.wiring.bundle: org.eclipse.wst.common.project.facet.ui
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.jpt.dbws.eclipselink.ui [osgi.identity; osgi.identity="org.eclipse.jpt.dbws.eclipselink.ui"; type="osgi.bundle"; version:Version="1.1.100.v201308271450"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.persistence.dbws.builder)(&(bundle-version>=2.3.0)(!(bundle-version>=3.0.0))))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.6.0.v20140809-296a69f"; osgi.wiring.bundle="org.eclipse.persistence.dbws.builder"
+  org.eclipse.persistence.dbws.builder [osgi.identity; osgi.identity="org.eclipse.persistence.dbws.builder"; type="osgi.bundle"; version:Version="2.6.0.v20140809-296a69f"]
+    import: (osgi.wiring.package=javax.xml.bind)
+     |
+    export: osgi.wiring.package: javax.xml.bind
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.apikit 4 0 2015-02-05 14:15:54.527
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.apikit [910]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.1.0,4.2.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.errors 4 0 2015-02-05 14:15:54.560
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.errors [916]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.errors [osgi.identity; osgi.identity="org.mule.tooling.errors"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ion 4 0 2015-02-05 14:15:54.594
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ion [918]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.ion [osgi.identity; osgi.identity="org.mule.tooling.ion"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven 4 0 2015-02-05 14:15:54.639
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven [919]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.maven.ui 4 0 2015-02-05 14:15:54.670
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.maven.ui [920]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime.ui; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime.ui; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime.ui [930]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime 4 0 2015-02-05 14:15:54.691
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime [929]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.runtime.ui 4 0 2015-02-05 14:15:54.721
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.runtime.ui [930]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.debugger 4 0 2015-02-05 14:15:54.775
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.debugger [939]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.runtime [929]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.mule.tooling.ui.contribution.sap.3.5.0 4 0 2015-02-05 14:15:54.803
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.mule.tooling.ui.contribution.sap.3.5.0 [949]
+  Unresolved requirement: Require-Bundle: org.mule.tooling.maven; bundle-version="[4.0.0,5.0.0)"
+    -> Bundle-SymbolicName: org.mule.tooling.maven; bundle-version="4.1.1.201411041603"; singleton:="true"
+       org.mule.tooling.maven [919]
+         Unresolved requirement: Require-Bundle: org.mule.tooling.runtime; bundle-version="[4.0.0,5.0.0)"
+           -> Bundle-SymbolicName: org.mule.tooling.runtime; bundle-version="4.1.1.201411041603"; singleton:="true"
+              org.mule.tooling.runtime [929]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"] because it is exposed to package 'javax.xml.bind.attachment' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"] and javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"] via two dependency chains.
+
+Chain 1:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.1.v20140909-1633"; singleton:="true"]
+
+Chain 2:
+  org.mule.tooling.runtime [osgi.identity; osgi.identity="org.mule.tooling.runtime"; type="osgi.bundle"; version:Version="4.1.1.201411041603"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=com.sun.jersey)(bundle-version>=1.12.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="1.17.0.v20130314-2020"; osgi.wiring.bundle="com.sun.jersey"
+  com.sun.jersey [osgi.identity; osgi.identity="com.sun.jersey"; type="osgi.bundle"; version:Version="1.17.0.v20130314-2020"]
+    import: (osgi.wiring.package=javax.xml.bind.attachment)
+     |
+    export: osgi.wiring.package: javax.xml.bind.attachment
+  javax.xml.bind [osgi.identity; osgi.identity="javax.xml.bind"; type="osgi.bundle"; version:Version="2.1.9.v201005080401"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.m2e.logback.configuration 2 0 2015-02-05 14:15:57.906
+!MESSAGE Exception while setting up logging:org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+!STACK 0
+java.lang.ClassCastException: org.eclipse.osgi.internal.framework.EquinoxConfiguration$1 cannot be cast to java.lang.String
+	at org.eclipse.m2e.logback.configuration.LogHelper.logJavaProperties(LogHelper.java:26)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.loadConfiguration(LogPlugin.java:189)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.configureLogback(LogPlugin.java:144)
+	at org.eclipse.m2e.logback.configuration.LogPlugin.access$2(LogPlugin.java:107)
+	at org.eclipse.m2e.logback.configuration.LogPlugin$1.run(LogPlugin.java:62)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-05 14:16:02.883
+!MESSAGE 'M2_REPO has been previously set. Not adding it again to the workspace.
+
+!ENTRY org.mule.tooling.core 1 0 2015-02-05 14:16:04.687
+!MESSAGE Forcing the usage of 'current' in the schemaLocation of CMIS [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/1.1/mule-cmis.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/cmis/current/mule-cmis.xsd
+Forcing the usage of 'current' in the schemaLocation of Facebook [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/2.0/mule-facebook.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/facebook/current/mule-facebook.xsd
+Forcing the usage of 'current' in the schemaLocation of Magento [version 1.1, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/magento/1.1/mule-magento.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/magento/current/mule-magento.xsd
+Forcing the usage of 'current' in the schemaLocation of Mongo DB [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/2.0/mule-mongo.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/mongo/current/mule-mongo.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon S3 [version 2.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/s3/2.0/mule-s3.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd
+Forcing the usage of 'current' in the schemaLocation of Salesforce [version 5.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/5.0/mule-sfdc.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sfdc/current/mule-sfdc.xsd
+Forcing the usage of 'current' in the schemaLocation of Amazon SQS [version 1.0, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/1.0/mule-sqs.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/sqs/current/mule-sqs.xsd
+Forcing the usage of 'current' in the schemaLocation of Twitter [version 2.4, ESB version 3.4+]. Original schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/2.4/mule-twitter.xsd. New schemaLocation is: http://www.mulesoft.org/schema/mule/twitter/current/mule-twitter.xsd
+
+!ENTRY org.eclipse.ui.browser 2 0 2015-02-05 14:16:10.020
+!MESSAGE Internal browser is not available: No more handles [Unknown Mozilla path (MOZILLA_FIVE_HOME not set)]
+
+!ENTRY org.eclipse.ui.workbench 4 2 2015-02-05 14:27:16.681
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.workbench".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.ClassScope.buildMethods(ClassScope.java:324)
+	at org.eclipse.jdt.internal.compiler.lookup.ClassScope.buildFieldsAndMethods(ClassScope.java:180)
+	at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.buildFieldsAndMethods(CompilationUnitScope.java:84)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.completeTypeBindings(LookupEnvironment.java:293)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.accept(HierarchyResolver.java:166)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:176)
+	at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.getTypeOrPackage(PackageBinding.java:201)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java:3330)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.getType(Scope.java:3042)
+	at org.eclipse.jdt.internal.compiler.ast.SingleTypeReference.getTypeBinding(SingleTypeReference.java:51)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:472)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:563)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:559)
+	at org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.resolveTypesFor(SourceTypeBinding.java:1912)
+	at org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.methods(SourceTypeBinding.java:1464)
+	at org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.faultInTypesForFieldsAndMethods(SourceTypeBinding.java:852)
+	at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.faultInTypes(CompilationUnitScope.java:450)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:825)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:628)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertypes(HierarchyBuilder.java:116)
+	at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build(IndexBasedHierarchyBuilder.java:136)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute(TypeHierarchy.java:301)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh(TypeHierarchy.java:1268)
+	at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation(CreateTypeHierarchyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:741)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:693)
+	at org.eclipse.jdt.internal.corext.util.SuperTypeHierarchyCache.getTypeHierarchy(SuperTypeHierarchyCache.java:144)
+	at org.eclipse.jdt.internal.corext.util.SuperTypeHierarchyCache.getTypeHierarchy(SuperTypeHierarchyCache.java:96)
+	at org.eclipse.jdt.internal.corext.util.SuperTypeHierarchyCache.getMethodOverrideTester(SuperTypeHierarchyCache.java:105)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:171)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:273)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:273)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:83)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:367)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:349)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:372)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:332)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.ui 4 4 2015-02-05 14:27:16.688
+!MESSAGE Exception in Decorator. The 'Java Method Override Indicator' decorator will be disabled.
+
+!ENTRY org.eclipse.ui 4 4 2015-02-05 14:27:16.688
+!MESSAGE java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.jdt.internal.compiler.lookup.ClassScope.buildMethods(ClassScope.java:324)
+	at org.eclipse.jdt.internal.compiler.lookup.ClassScope.buildFieldsAndMethods(ClassScope.java:180)
+	at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.buildFieldsAndMethods(CompilationUnitScope.java:84)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.completeTypeBindings(LookupEnvironment.java:293)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.accept(HierarchyResolver.java:166)
+	at org.eclipse.jdt.internal.compiler.lookup.LookupEnvironment.askForType(LookupEnvironment.java:176)
+	at org.eclipse.jdt.internal.compiler.lookup.PackageBinding.getTypeOrPackage(PackageBinding.java:201)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.getTypeOrPackage(Scope.java:3330)
+	at org.eclipse.jdt.internal.compiler.lookup.Scope.getType(Scope.java:3042)
+	at org.eclipse.jdt.internal.compiler.ast.SingleTypeReference.getTypeBinding(SingleTypeReference.java:51)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.internalResolveType(TypeReference.java:472)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:563)
+	at org.eclipse.jdt.internal.compiler.ast.TypeReference.resolveType(TypeReference.java:559)
+	at org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.resolveTypesFor(SourceTypeBinding.java:1912)
+	at org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.methods(SourceTypeBinding.java:1464)
+	at org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding.faultInTypesForFieldsAndMethods(SourceTypeBinding.java:852)
+	at org.eclipse.jdt.internal.compiler.lookup.CompilationUnitScope.faultInTypes(CompilationUnitScope.java:450)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:825)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyResolver.resolve(HierarchyResolver.java:628)
+	at org.eclipse.jdt.internal.core.hierarchy.HierarchyBuilder.buildSupertypes(HierarchyBuilder.java:116)
+	at org.eclipse.jdt.internal.core.hierarchy.IndexBasedHierarchyBuilder.build(IndexBasedHierarchyBuilder.java:136)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.compute(TypeHierarchy.java:301)
+	at org.eclipse.jdt.internal.core.hierarchy.TypeHierarchy.refresh(TypeHierarchy.java:1268)
+	at org.eclipse.jdt.internal.core.CreateTypeHierarchyOperation.executeOperation(CreateTypeHierarchyOperation.java:90)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:729)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:789)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:741)
+	at org.eclipse.jdt.internal.core.SourceType.newSupertypeHierarchy(SourceType.java:693)
+	at org.eclipse.jdt.internal.corext.util.SuperTypeHierarchyCache.getTypeHierarchy(SuperTypeHierarchyCache.java:144)
+	at org.eclipse.jdt.internal.corext.util.SuperTypeHierarchyCache.getTypeHierarchy(SuperTypeHierarchyCache.java:96)
+	at org.eclipse.jdt.internal.corext.util.SuperTypeHierarchyCache.getMethodOverrideTester(SuperTypeHierarchyCache.java:105)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.getOverrideIndicators(OverrideIndicatorLabelDecorator.java:171)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.computeAdornmentFlags(OverrideIndicatorLabelDecorator.java:136)
+	at org.eclipse.jdt.ui.OverrideIndicatorLabelDecorator.decorate(OverrideIndicatorLabelDecorator.java:273)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorDefinition.decorate(LightweightDecoratorDefinition.java:273)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager$LightweightRunnable.run(LightweightDecoratorManager.java:83)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.decorate(LightweightDecoratorManager.java:367)
+	at org.eclipse.ui.internal.decorators.LightweightDecoratorManager.getDecorations(LightweightDecoratorManager.java:349)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.ensureResultCached(DecorationScheduler.java:372)
+	at org.eclipse.ui.internal.decorators.DecorationScheduler$1.run(DecorationScheduler.java:332)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface 2 0 2015-02-05 15:30:16.106
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-02-05 15:30:16.106
+!MESSAGE A conflict occurred for CTRL+D:
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.eof,EOF,
+		Send end of file,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5773b883,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+Binding(CTRL+D,
+	ParameterizedCommand(Command(org.eclipse.ui.edit.text.delete.line,Delete Line,
+		Delete a line of text,
+		Category(org.eclipse.ui.category.textEditor,Text Editing,Text Editing Commands,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@35f5eca7,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.textEditorScope,,,system)

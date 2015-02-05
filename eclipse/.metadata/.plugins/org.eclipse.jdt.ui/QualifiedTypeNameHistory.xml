@@ -18,11 +18,12 @@
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="test.server.ResultSetDelegation"/>
-<fullyQualifiedTypeName name="test.server.ConnectionDelegationImpl"/>
-<fullyQualifiedTypeName name="test.server.ConnectionDelegation"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="javax.jws.WebMethod"/>
 <fullyQualifiedTypeName name="javax.jws.WebService"/>
+<fullyQualifiedTypeName name="sun.security.action.GetBooleanAction"/>
 <fullyQualifiedTypeName name="test.server.StatementDelegation"/>
+<fullyQualifiedTypeName name="test.server.ConnectionDelegation"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="test.server.ConnectionDelegationImpl"/>
+<fullyQualifiedTypeName name="test.server.ResultSetDelegation"/>
 </qualifiedTypeNameHistroy>
